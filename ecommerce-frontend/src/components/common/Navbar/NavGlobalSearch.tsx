@@ -6,7 +6,7 @@ function NavGlobalSearch() {
     <div className="flex items-center border rounded w-80">
       <input
         placeholder="Search for toys, cloths, shoes..."
-        className="grow focus:outline-none px-2"
+        className="grow focus:outline-none px-2 placeholder-gray-500"
       />
       <button className="rounded-r px-2">
         <BsSearch />
