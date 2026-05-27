@@ -4,6 +4,7 @@ import { BsCart, BsHeart, BsPerson } from "react-icons/bs";
 function Navbar() {
   return (
     <>
+      {/*  */}
       {/* className="grid h-56 grid-cols-3 content-between gap-4" */}
       <ul className="flex justify-end  gap-2 px-5">
         <li className="flex items-center gap-2">
