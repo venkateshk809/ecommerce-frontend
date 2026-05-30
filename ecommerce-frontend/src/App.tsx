@@ -1,7 +1,12 @@
 import "./App.css";
+import AppHeader from "./features/products/pages/AppHeader";
 
 function App() {
-  return <div className="p-10 text-3xl font-bold text-pink-500">Welcome</div>;
+
+  return<>
+
+  <AppHeader/>
+  </> ;
 }
 
 export default App;
