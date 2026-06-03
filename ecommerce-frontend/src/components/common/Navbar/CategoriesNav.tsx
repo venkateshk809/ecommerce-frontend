@@ -23,9 +23,9 @@ function CategoriesNav() {
   ];
   return (
     <>
-      <ul className="flex items-center justify-around cursor-pointer">
+      <ul className="flex items-center justify-around cursor-pointer border-t-2 border-b-2 py-3 border-gray-200">
         {categories.map((cat) => (
-          <li className="font-serif active:text-pink-600 hover:text-pink-600">
+          <li className="font-sans font-medium active:text-pink-600 hover:text-pink-600">
             {cat.name}
           </li>
         ))}
