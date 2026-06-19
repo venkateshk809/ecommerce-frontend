@@ -1,8 +1,33 @@
 import axios from "axios";
 
-const instance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "http://localhost:3000/api",
-  timeout: 10000,
+const api = axios.create({
+  baseURL: "https://kids-store-api-dev.onrender.com",
 });
 
-export default instance;
+// Request Interceptor
+api.interceptors.request.use(
+  (config) => {
+    // Common headers
+    config.headers["Content-Type"] = "application/json";
+
+    return config;
+  },
+  (error) => {
+    console.error("Request Error:", error);
+    return Promise.reject(error);
+  },
+);
+
+// Response Interceptor
+api.interceptors.response.use(
+  (response) => {
+    return response.data;
+  },
+  (error) => {
+    console.error("Response Error:", error.response?.status, error.message);
+
+    return Promise.reject(error);
+  },
+);
+
+export default api;

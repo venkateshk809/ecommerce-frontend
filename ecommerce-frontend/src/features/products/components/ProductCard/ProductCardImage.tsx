@@ -1,5 +1,5 @@
 import React from "react";
-import type { Product } from "../types/products";
+import type { Product } from "../../types/products";
 import { BsHeart, BsHeartFill, BsPersonHeart } from "react-icons/bs";
 
 interface ProductCardImageProps {

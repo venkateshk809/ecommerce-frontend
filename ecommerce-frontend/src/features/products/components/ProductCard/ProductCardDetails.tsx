@@ -1,6 +1,6 @@
 import React from "react";
-import type { Product } from "../types/products";
-import { BsCurrencyRupee, BsStarFill } from "react-icons/bs";
+import type { Product } from "../../types/products";
+import { BsStarFill } from "react-icons/bs";
 
 interface ProductCardDetailsProp {
   productDetail: Product;

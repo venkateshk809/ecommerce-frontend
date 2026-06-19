@@ -16,4 +16,8 @@ export interface Product {
   __v: number;
   createdAt: string;
   updatedAt: string;
+  page: number;
+  limit: number;
+  totalProducts: number;
+  totalPages: number;
 }
