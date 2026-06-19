@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Slider } from "@mui/material";
+import { FilterContext } from "../../../../context/FilterContext";
 
 function PriceRangeSlider() {
-  const [value, setValue] = useState<number[]>([0, 5000]);
-  const handleChange = (event: Event, newValue: number[]) => {
-    setValue(newValue);
-  };
+  const { priceRange, setPriceRange } = useContext(FilterContext);
   return (
     <div className="p-2">
       <h1 className="font-bold">Price Range</h1>
       <div>
         <Slider
-          value={value}
-          onChange={handleChange}
+          value={priceRange}
+          onChange={(_, newValue) => setPriceRange(newValue as number[])}
           valueLabelDisplay="auto"
           min={0}
           max={5000}

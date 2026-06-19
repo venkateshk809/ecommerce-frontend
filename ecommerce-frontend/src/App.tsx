@@ -12,17 +12,13 @@ import { FilterContext } from "./context/FilterContext";
 
 function App() {
   const [productDetails, setProductDetails] = useState<Product[]>([]);
-  // const [totalApiDetails, setTotalApiDetails] = useState<ApiResponse | null>(
-  //   null,
-  // );
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
+  const [priceRange, setPriceRange] = useState<number[]>([0, 5000]);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
       const fetchingDetailsFromApi = await api.get("/products?page=1&imit=12");
-      // const convertedProductDetails = await fetchingDetailsFromApi.json();
-
-      // setTotalApiDetails(convertedProductDetails);
-
       setProductDetails(fetchingDetailsFromApi.products);
     };
     fetchProductDetails();
@@ -33,7 +29,17 @@ function App() {
       <AppHeader />
       <ProductsBanner />
       <ProductsSort />
-      <FilterContext.Provider value={{ productDetails }}>
+      <FilterContext.Provider
+        value={{
+          productDetails,
+          selectedBrands,
+          setSelectedBrands,
+          selectedCategory,
+          setSelectedCategory,
+          priceRange,
+          setPriceRange,
+        }}
+      >
         <ProductCardandFilters />
       </FilterContext.Provider>
       <Pagination
